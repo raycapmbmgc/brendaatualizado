@@ -456,4 +456,107 @@ header {
     margin-top: 20px;
     font-size: 1.2rem;
   }
+
+/* iPads e tablets médios: 769px até 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    
+    /* Container geral em coluna */
+    .container {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+    }
+
+    /* Texto */
+    .text {
+        text-align: center;
+        margin-left: 0;
+    }
+
+    .text h1 {
+        font-size: 2.8em;
+    }
+
+    .text h1 strong {
+        font-size: 2em;
+        animation: none; /* Evita bug de digitação */
+        width: auto;
+    }
+
+    /* Imagem principal */
+    .principal {
+        max-width: 350px;
+        height: 420px;
+        padding: 0 20px;
+        margin-top: 20px;
+    }
+
+    .principal img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Ícones sociais visíveis e fixos à esquerda */
+    .social-icons {
+        position: fixed;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 999;
+    }
+
+    .social-icon {
+        font-size: 28px;
+        color: #b82562;
+    }
+
+    /* Carrossel */
+    .carousel {
+        width: 85%;
+        margin-top: 30px;
+    }
+
+    .carousel-images img {
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+    /* Vídeos estilo story */
+    .story-videos {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .video-container {
+        width: 40%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+    }
+
+    /* Serviços */
+    .servicos {
+        padding: 20px;
+        gap: 25px;
+    }
+
+    .servicos p {
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    /* Perfil resumo */
+    .perfil-resumo {
+        font-size: 1rem;
+        padding: 25px;
+        margin: 0 15px;
+    }
+
+    .perfil-resumo .destaque {
+        font-size: 1.1rem;
+    }
+}
+
   
