@@ -219,20 +219,19 @@ img:hover {
     }
 
     .image-container {
-        width: 90%;
-        max-width: 400px;
-        height: 550px; /* Aumentei a altura do contêiner para garantir a visualização correta */
-        aspect-ratio: 3 / 4; /* Mantém a proporção */
+        width: 350px; /* Largura fixa */
+        height: auto; /* Altura automática para manter a proporção */
+        aspect-ratio: 3 / 4; /* Mantém a proporção da imagem */
         overflow: hidden;
-        position: relative; /* Garante o controle sobre a imagem */
+        position: relative;
     }
 
     .image-container img {
-        width: 100%;
-        height: 100%; /* Ajusta para preencher a altura da imagem */
-        object-fit: contain; /* Ajusta para que a imagem se encaixe sem cortar */
+        width: 100%; /* A imagem vai ocupar toda a largura do contêiner */
+        height: auto; /* A altura será calculada automaticamente para manter a proporção */
+        object-fit: contain; /* A imagem vai se ajustar sem cortar ou esticar */
         border-radius: 10px;
-        display: block; /* Remove qualquer margem extra ao redor da imagem */
+        display: block; /* Remove qualquer espaço extra ao redor da imagem */
     }
 
     .social-icons {
