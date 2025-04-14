@@ -209,7 +209,6 @@ img:hover {
         font-family: 'Bauhaus 93';
     }
 }
-
 /* iPad Pro e telas altas (ex: 756x1628) */
 @media (min-width: 750px) and (max-width: 800px) and (min-height: 1400px) {
     .container,
@@ -223,15 +222,17 @@ img:hover {
         width: 90%;
         max-width: 400px;
         height: auto;
-        aspect-ratio: 3 / 4; /* Mantém proporção */
+        aspect-ratio: 3 / 4; /* Mantém a proporção */
         overflow: hidden;
+        position: relative; /* Para garantir o controle sobre a imagem */
     }
 
     .image-container img {
         width: 100%;
-        height: auto;
-        object-fit: contain; /* Garante que a imagem inteira apareça */
+        height: 100%; /* Ajusta para preencher a altura da imagem */
+        object-fit: contain; /* Garantir que a imagem inteira apareça */
         border-radius: 10px;
+        display: block; /* Remove qualquer margem extra ao redor da imagem */
     }
 
     .social-icons {
