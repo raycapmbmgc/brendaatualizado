@@ -221,16 +221,16 @@ img:hover {
     .image-container {
         width: 90%;
         max-width: 400px;
-        height: auto;
+        height: 550px; /* Aumentei a altura do contêiner para garantir a visualização correta */
         aspect-ratio: 3 / 4; /* Mantém a proporção */
         overflow: hidden;
-        position: relative; /* Para garantir o controle sobre a imagem */
+        position: relative; /* Garante o controle sobre a imagem */
     }
 
     .image-container img {
         width: 100%;
         height: 100%; /* Ajusta para preencher a altura da imagem */
-        object-fit: contain; /* Garantir que a imagem inteira apareça */
+        object-fit: contain; /* Ajusta para que a imagem se encaixe sem cortar */
         border-radius: 10px;
         display: block; /* Remove qualquer margem extra ao redor da imagem */
     }
