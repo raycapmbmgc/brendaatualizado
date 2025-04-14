@@ -476,11 +476,24 @@ header {
     .text h1 {
         font-size: 2.8em;
     }
-
-    .text h1 strong {
+ .text h1 strong {
         font-size: 2em;
-        animation: none; /* Evita bug de digitação */
-        width: auto;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid #fff;
+        animation: typing 3s steps(15) 1s forwards, blink 0.8s step-end infinite;
+        width: 0;
+    }
+
+    /* Animação de digitação */
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
     }
 
     /* Imagem principal */
