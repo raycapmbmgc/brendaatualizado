@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Dancing+Script:wght@400&family=Bauhaus+93&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #23252a;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho */
+header {
+    width: 100%;
+    background-color: #b82562;
+    padding: 12px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 999;
+}
+
+/* Container do cabeçalho */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+    flex-grow: 1;
+    margin-bottom: 10px;
+}
+
+/* Botão hamburguer */
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Menu lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #b82562;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px;
+}
+
+/* Navegação */
+.nav {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 20px 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Bauhaus 93', sans-serif;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Containers de imagem */
+.container,
+.novas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    gap: 20px;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+.image-container {
+    position: relative;
+    width: 350px; /* largura padrão */
+    height: 450px; /* altura padrão */
+    margin: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* RESPONSIVIDADE */
+
+/* Tablets e notebooks */
+@media (max-width: 1200px) {
+    .container,
+    .novas {
+        flex-direction: column;
+        align-items: center;
+        padding: 60px 10px;
+    }
+
+    .image-container {
+        width: 90%;
+    }
+}
+
+/* Celulares grandes e médios */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .menu-toggle {
+        font-size: 26px;
+    }
+
+    .sidebar {
+        width: 200px;
+    }
+
+    .image-container {
+        width: 100%;
+    }
+    .nav-link{
+        font-family: 'Bauhaus 93';
+    }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+        text-align: left;
+        margin-bottom: 8px;
+    }
+
+    .menu-toggle {
+        font-size: 24px;
+    }
+
+    .sidebar {
+        width: 180px;
+    }
+
+    .image-container {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav-link{
+        font-family: 'Bauhaus 93';
+    }
+}

@@ -1,0 +1,459 @@
+/* Importando as fontes do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Dancing+Script:wght@400&family=Bauhaus+93&display=swap');
+
+/* Reset e base */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    background-color: #23252a;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding-top: 70px;
+    box-sizing: border-box;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #b82562;
+    padding: 10px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+}
+
+/* Navegação */
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    color: white;
+    font-family: 'Bauhaus 93', sans-serif;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Container principal */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 40px;
+    position: relative;
+}
+
+/* Texto */
+.text {
+    margin-left: 50px;
+    flex: 1;
+    min-width: 300px;
+    padding: 10px 20px;
+}
+
+.text h1 {
+    margin-top: -40px;
+    font-size: 3.5em;
+    font-family: 'Rubik', sans-serif;
+    margin-bottom: 10px;
+}
+
+.text h1 strong {
+    margin-top: -30px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 5px;
+    animation: typing 2s steps(12) 1s infinite, blink 0.75s step-end infinite;
+    width: 0;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+.text h3 {
+    font-size: 1.8em;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Imagem destaque */
+.principal {
+    background-color: #b82562;
+    padding: 10px 20px 0 20px; /* menos padding inferior */
+    border-radius: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    max-width: 380px; /* menor retângulo */
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* imagem desce ao fundo */
+    height: 420px; /* controla altura total */
+}
+
+.principal img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    align-self: flex-end;
+}
+
+.perfil-resumo {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 20px;
+    font-family: 'Rubik', sans-serif;
+}
+
+
+/* Ícones sociais */
+.social-icons {
+    position: fixed; /* Alterado de absolute para fixed */
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+    margin-top: 210px;
+}
+
+.social-icon {
+    color: #b82562;
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+.social-icon:hover {
+    color: #fff;
+}
+
+/* Para telas grandes, ajuste a posição e visibilidade */
+@media (min-width: 1024px) {
+    .social-icons {
+        left: 20px; /* Ajuste da posição dos ícones para não ficarem fora da tela */
+        top: 100px; /* Ajusta o início da posição vertical, se necessário */
+    }
+    
+}
+
+/* Linha separadora */
+.linha, .hr {
+    height: 3px;
+    background-color: #b82562;
+    margin: 20px auto 80px auto; /* Ajustado o espaçamento para ficar mais próximo */
+    width: 90%;
+    border-radius: 3px;
+}
+
+/* Carrossel de Imagens */
+.carousel {
+    position: relative;
+    width: 90%;
+    max-width: 350px;
+    margin: 40px auto;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    background-color: #1c1c1c;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-images img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: none;
+    border-radius: 20px;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 16px;
+    z-index: 2;
+    border-radius: 50%;
+}
+
+.carousel .prev { left: 10px; }
+.carousel .next { right: 10px; }
+
+.carousel button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Serviços */
+.servicos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+}
+
+.servicos p {
+    font-family: 'Bauhaus 93', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Vídeos Story */
+.story-videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 10px;
+}
+
+.video-container {
+    width: 25%;
+    min-width: 200px;
+    aspect-ratio: 9/16;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #121212;
+}
+
+.story-video {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Responsividade */
+
+/* Tablets */
+@media (max-width: 768px) {
+
+    .nav-link{
+        font-family: 'Bauhaus 93';
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .text h1 {
+        font-size: 2.5em;
+    }
+
+    .text h1 strong {
+        font-size: 2.8em;
+        width: auto; /* Para que a animação funcione também nas telas menores */
+    }
+
+    .text h3 {
+        font-size: 1.4em;
+    }
+
+    .principal img {
+        margin-top: -40px;
+    }
+
+    .carousel {
+        height: auto;
+    }
+
+    .carousel-images img {
+        object-fit: contain;
+        max-height: 300px;
+    }
+
+    .social-icons {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 20px;
+        gap: 20px;
+    }
+
+    .servicos p {
+        font-family: 'Bauhaus 93';
+        font-size: 1.1em; /* Aumentando a legibilidade */
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .nav-link{
+        font-family: 'Bauhaus 93';
+    }
+    /* Container principal em coluna e centralizado */
+    .container {
+        margin-top: -10px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 10px 20px;
+    }
+
+    /* Texto centralizado */
+    .text {
+        margin-left: 10px;
+        padding: 0 10px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .text h1 {
+        margin-top: 0;
+        font-size: 1.8em;
+    }
+
+    .text h1 strong {
+        font-size: 2.2em;
+        width: auto; /* Para que a animação funcione também nas telas menores */
+    }
+
+    .text h3 {
+        font-size: 1.2em;
+    }
+
+    /* Retângulo rosa centralizado com imagem */
+    .principal {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* Alinha a imagem no fundo */
+        background-color: #b82562;
+        border-radius: 30px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 280px;
+        height: 353px;
+        padding: 0 20px;
+        margin-top: 20px;
+        position: relative; /* Para garantir que a imagem fique no fundo */
+        margin-top: -10px;
+    }
+
+    .principal img {
+        max-width: 295px;
+        width: 100%; /* A imagem ocupará toda a largura do contêiner */
+        height: auto; /* Mantém a proporção */
+        margin-bottom: 0; /* Remove qualquer margem inferior */
+        display: block; /* Garante que a imagem seja exibida sem espaços extras */
+    }
+
+    /* Ícones sociais abaixo do retângulo */
+    .social-icons {
+        position: static !important;
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .social-icon {
+        font-size: 24px;
+        color: #b82562;
+    }
+
+    /* Carrossel */
+    .carousel {
+        width: 95%;
+        margin-top: 30px;
+    }
+
+    .carousel-images img {
+        height: auto;
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    /* Vídeos estilo story */
+    .video-container {
+        width: 90%;
+        height: auto;
+        aspect-ratio: 9 / 16;
+    }
+
+    .servicos p {
+        font-family: 'Bauhaus 93';
+        font-size: 1em;
+    }
+} 
+.perfil-section {
+    margin-top: -20px;
+    padding: 50px 20px;
+    background: #23252a;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .perfil-resumo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    max-width: 800px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+  }
+  
+  .perfil-resumo:hover {
+    transform: scale(1.02);
+  }
+  
+  .perfil-resumo .destaque {
+    font-weight: 600;
+    color: #d91f5c;
+    display: block;
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+  

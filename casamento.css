@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&family=Dancing+Script:wght@400&family=Bauhaus+93&display=swap');
+
+/* Reset e base */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #23252a;
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Cabeçalho fixo */
+header {
+    width: 100%;
+    background-color: #b82562;
+    padding: 12px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+/* Conteúdo do cabeçalho */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: white;
+}
+
+/* Botão hamburguer */
+.menu-toggle {
+    font-family: 'Bauhaus 93', sans-serif;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Menu lateral */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #b82562;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s ease-in-out;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    right: 0;
+}
+
+/* Botão de fechar */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: right;
+    padding: 10px;
+}
+
+/* Navegação */
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.nav-item {
+    margin: 20px 0;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Bauhaus 93', sans-serif;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Galeria de imagens */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 100px 20px 40px;
+    box-sizing: border-box;
+}
+
+/* Cada imagem */
+.image-container {
+    position: relative;
+    flex: 1 1 300px;
+    max-width: 350px;
+}
+
+/* Imagem com hover */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Legenda da imagem */
+.caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #23252a;
+    padding: 10px;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover .caption {
+    opacity: 1;
+}
+
+/* Responsivo - Tablet */
+@media (max-width: 768px) {
+    .header-container {
+        padding: 0 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .menu-toggle {
+        font-size: 26px;
+    }
+
+    .container {
+        flex-direction: column;
+        padding-top: 100px;
+    }
+
+    .image-container {
+        max-width: 90%;
+    }
+    .nav-link{
+        font-family: 'Bauhaus 93';
+    }
+}
+
+/* Responsivo - Celular */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .menu-toggle {
+        font-size: 22px;
+    }
+
+    .nav-link {
+            font-family: 'Bauhaus 93';
+        font-size: 18px;
+    }
+
+    .image-container {
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
